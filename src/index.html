@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Notes App</title>
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <app-bar></app-bar>
+
+    <main class="container">
+      <note-form></note-form>
+
+      <section>
+        <h2>Catatan Aktif</h2>
+        <section id="notes" class="notes-grid"></section>
+      </section>
+
+      <section>
+        <h2>Arsip</h2>
+        <section id="archivedNotes" class="notes-grid"></section>
+      </section>
+    </main>
+  </body>
+</html>

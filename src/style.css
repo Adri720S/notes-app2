@@ -1,0 +1,143 @@
+:root {
+  --bg: #FAF3E1;
+  --card: #F5E7C6;
+  --primary: #222222;
+  --accent: #FA8112;
+  --dark: #222222;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--bg);
+  color: var(--dark);
+}
+
+/* APP BAR */
+.app-bar {
+  background-color: var(--primary);
+  color: white;
+  padding: 1.2rem 2rem;
+}
+
+/* CONTAINER */
+.container {
+  padding: 1.5rem 2rem;
+}
+
+/* FORM */
+note-form form {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+note-form input,
+note-form textarea {
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+note-form textarea {
+  resize: vertical;
+}
+
+note-form button {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+note-form button:hover {
+  opacity: 0.9;
+}
+
+/* GRID NOTES */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+
+/* NOTE CARD */
+.note-item {
+  background-color: var(--card);
+  border-radius: 12px;
+  padding: 1rem;
+  min-height: 180px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.note-item h3 {
+  margin: 0 0 0.5rem;
+  color: var(--dark);
+}
+
+.note-item p {
+  flex-grow: 1;
+  margin: 0 0 0.8rem;
+}
+
+.note-item small {
+  color: #555;
+  font-size: 0.8rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  font-weight: bold;
+}
+
+.note-item {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.note-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* =======================
+   ANIMATIONS
+======================= */
+
+/* Fade + slide saat note muncul */
+.fade-in {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover animasi tombol */
+.note-item button {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.note-item button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
