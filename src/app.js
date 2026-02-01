@@ -85,7 +85,13 @@ document.addEventListener('note-added', async (event) => {
   }
 });
 
+/* EVENT: UPDATE NOTE (ARCHIVE / UNARCHIVE / DELETE) */
+document.addEventListener('note-updated', async () => {
+  await renderAllNotes();
+});
+
 /* =======================
    FIRST LOAD
 ======================= */
 renderAllNotes();
+
