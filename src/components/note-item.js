@@ -33,7 +33,7 @@ class NoteItem extends HTMLElement {
         showConfirmButton: false,
       });
 
-      this.remove();
+      document.dispatchEvent(new Event('note-updated'));
     } catch (error) {
       Swal.fire({
         icon: 'error',
@@ -63,7 +63,7 @@ class NoteItem extends HTMLElement {
         showConfirmButton: false,
       });
 
-      this.remove();
+      document.dispatchEvent(new Event('note-updated'));
     } catch (error) {
       Swal.fire({
         icon: 'error',
@@ -106,3 +106,4 @@ class NoteItem extends HTMLElement {
 }
 
 customElements.define('note-item', NoteItem);
+
